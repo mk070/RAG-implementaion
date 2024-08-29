@@ -1,0 +1,9 @@
+pymilvus
+pandas
+langchain
+llama-index
+transformers
+torch
+torchvision 
+torchaudio
+numpy

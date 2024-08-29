@@ -1,0 +1,21 @@
+COBOL File Handling,.NET Equivalent,Description,Example Usage in COBOL,Example Usage in .NET
+OPEN INPUT,FileStream (Read),Open a file for reading,OPEN INPUT file-name,"FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);"
+OPEN OUTPUT,FileStream (Write),Open a file for writing,OPEN OUTPUT file-name,"FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write);"
+OPEN I-O,FileStream (Read/Write),Open a file for both reading and writing,OPEN I-O file-name,"FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);"
+CLOSE FILE,FileStream.Close,Close an open file,CLOSE file-name,fs.Close();
+READ FILE,StreamReader.ReadLine,Read a record from a file,READ file-name INTO record-name,string line = reader.ReadLine();
+WRITE FILE,StreamWriter.WriteLine,Write a record to a file,WRITE record-name,writer.WriteLine(recordName);
+REWRITE FILE,StreamWriter.WriteLine,Rewrite (update) a record in a file,REWRITE record-name,writer.WriteLine(recordName);
+DELETE FILE,File.Delete,Delete a file,DELETE file-name,File.Delete(fileName);
+START FILE,Seek Method,Set file position for reading sequentially,START file-name KEY IS EQUAL TO record-name,"fs.Seek(offset, SeekOrigin.Begin);"
+END-OF-FILE,StreamReader.EndOfStream,Check for end of file,AT END DISPLAY 'End of file',"if (reader.EndOfStream) { Console.WriteLine(""End of file""); }"
+READ NEXT RECORD,StreamReader.ReadLine,Read the next record from a file sequentially,READ file-name NEXT RECORD,string line = reader.ReadLine();
+OPEN EXTEND,FileStream (Append),Open a file for appending data,OPEN EXTEND file-name,"FileStream fs = new FileStream(fileName, FileMode.Append, FileAccess.Write);"
+WRITE AFTER ADVANCING,StreamWriter.WriteLine,Write data and move to the next line,WRITE record-name AFTER ADVANCING PAGE,writer.WriteLine(recordName);
+READ RANDOM,BinaryReader.Read,Read a specific record using a key,READ file-name RANDOM KEY IS record-key,using (BinaryReader reader = new BinaryReader(fs)) { ... }
+REWRITE RANDOM,BinaryWriter.Write,Rewrite a specific record using a key,REWRITE record-name RANDOM,using (BinaryWriter writer = new BinaryWriter(fs)) { ... }
+OPEN INPUT LOCK,FileStream with Locking,Open a file for input with locking,OPEN INPUT file-name WITH LOCK,"FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.None);"
+READ WITH LOCK,FileStream with Locking,Read a record from a file with locking,READ file-name INTO record-name WITH LOCK,"FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.None);"
+UNLOCK RECORD,FileStream with Unlocking,Unlock a previously locked record,UNLOCK file-name,"fs.Unlock(position, length);"
+DELETE RECORD,Delete,Delete a specific record,DELETE record-name,"// Not directly supported, depends on file structure"
+RENAME FILE,File.Move,Rename a file,RENAME file-name TO new-file-name,"File.Move(fileName, newFileName);"

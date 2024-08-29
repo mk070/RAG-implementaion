@@ -1,0 +1,14 @@
+COBOL Data Type,.NET Equivalent,Description,Example Usage in COBOL,Example Usage in .NET
+PIC X,string,Alphanumeric string,PIC X(10),string (10 chars)
+PIC 9,int,Numeric data,PIC 9(5),int (5 digits)
+PIC 9(5)V99,decimal,Numeric with decimal,PIC 9(5)V99,"decimal (5 digits, 2 decimal places)"
+PIC S9(5),int,Signed numeric data,PIC S9(5),"int (signed, 5 digits)"
+PIC S9(5)V99,decimal,Signed numeric with decimal,PIC S9(5)V99,"decimal (signed, 5 digits, 2 decimal places)"
+PIC X(n),string,Fixed length string,PIC X(15),string (15 chars)
+PIC 9(n),int,Fixed length numeric,PIC 9(10),int (10 digits)
+COMP,int,Packed decimal,COMP,int (packed decimal)
+COMP-3,decimal,Packed decimal (signed),COMP-3,decimal (packed decimal)
+PIC X(20),string,Alphanumeric string (20 characters),PIC X(20),string (20 chars)
+PIC 9(10)V99,decimal,Numeric with 10 digits before decimal and 2 after,PIC 9(10)V99,"decimal (10 digits, 2 decimal places)"
+DATE,DateTime,Date type,DATE,DateTime
+TIME,TimeSpan,Time type,TIME,TimeSpan
